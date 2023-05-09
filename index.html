@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Python Documentation</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>Python Documentation</header>
+        <ul>
+            <li class="nav-link"><a href="#Wheeting_Your_Appetite">Wheeting Your Appetite</a></li>
+            <li class="nav-link"><a href="#Introduction_to_Python">Introduction to Python</a></li>
+            <li class="nav-link"><a href="#Control_Flow">Control Flow</a></li>
+            <li class="nav-link"><a href="#Input_and_Output">Input and Output</a></li>
+            <li class="nav-link"><a href="#Modules">Modules</a></li>
+            <li class="nav-link"><a href="#Packages">Packages</a></li>
+            <li class="nav-link"><a href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+    <main id="main-doc">
+        <section class="main-section" id="Wheeting_Your_Appetite">
+            <header>Whetting Your Appetite</header>
+            <article>
+            <p>If you do much work on computers, eventually you find that there’s some task you’d like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you’d like to write a small custom database, or a specialized GUI application, or a simple game.
+
+                If you’re a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is too slow. Perhaps you’re writing a test suite for such a library and find writing the testing code a tedious task. Or maybe you’ve written a program that could use an extension language, and you don’t want to design and implement a whole new language for your application.
+                
+                Python is just the language for you.
+                
+                You could write a Unix shell script or Windows batch files for some of these tasks, but shell scripts are best at moving around files and changing text data, not well-suited for GUI applications or games. You could write a C/C++/Java program, but it can take a lot of development time to get even a first-draft program. Python is simpler to use, available on Windows, macOS, and Unix operating systems, and will help you get the job done more quickly.</p>
+                
+                <p>Python is simple to use, but it is a real programming language, offering much more structure and support for large programs than shell scripts or batch files can offer. On the other hand, Python also offers much more error checking than C, and, being a very-high-level language, it has high-level data types built in, such as flexible arrays and dictionaries. Because of its more general data types Python is applicable to a much larger problem domain than Awk or even Perl, yet many things are at least as easy in Python as in those languages.
+                
+                Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:
+            </p>
+            <ul>
+                <li>the high-level data types allow you to express complex operations in a single statement;</li>
+                <li>statement grouping is done by indentation instead of beginning and ending brackets;</li>
+                <li>no variable or argument declarations are necessary.</li>
+            </ul>
+        </article>
+        </section>
+
+        <section class="main-section" id="Introduction_to_Python">
+            <header>Introduction to Python</header>
+            <article>
+            <p>In the following examples, input and output are distinguished by the presence or absence of prompts (>>> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter. Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
+
+                You can toggle the display of prompts and output by clicking on >>> in the upper-right corner of an example box. If you hide the prompts and output for an example, then you can easily copy and paste the input lines into your interpreter.
+                
+                Many of the examples in this manual, even those entered at the interactive prompt, include comments. Comments in Python start with the hash character, #, and extend to the end of the physical line. A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.
+                
+                Some examples:</p>
+
+            <code># this is the first comment <br>
+                spam = 1  # and this is the second comment <br>
+                          # ... and now a third! <br>
+                text = "# This is not a comment because it's inside quotes."</code>
+
+            <p>Let’s try some simple Python commands. Start the interpreter and wait for the primary prompt, >>>. (It shouldn’t take long.)</p>
+
+                <p>
+                Numbers: <br>
+                The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. For example:</p>
+                <code>>>> 2 + 2 <br>
+                    4  <br>
+                    >>> 50 - 5*6 <br>
+                    20 <br>
+                    >>> (50 - 5*6) / 4 <br>
+                    5.0 <br>
+                    >>> 8 / 5  # division always returns a floating point number <br>
+                    1.6</code>
+                <p>Strings:<br>
+                Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result 2. \ can be used to escape quotes:</p>
+                <code>>>> '"Isn\'t," they said.' <br>
+                    '"Isn\'t," they said.' <br>
+                    >>> print('"Isn\'t," they said.') <br>
+                    "Isn't," they said. <br>
+                    >>> s = 'First line.\nSecond line.'  # \n means newline <br>
+                    >>> s  # without print(), \n is included in the output <br>
+                    'First line.\nSecond line.' <br>
+                    >>> print(s)  # with print(), \n produces a new line <br>
+                    First line. <br>
+                    Second line.</code>
+                <p>Lists:<br>
+                    Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.</p>
+                <code>>>> squares = [1, 4, 9, 16, 25] <br>
+                    >>> squares <br>
+                    [1, 4, 9, 16, 25] <br>
+                    >>> squares[0]  # indexing returns the item <br>
+                        1 <br>
+                        >>> squares[-1] <br>
+                        25 <br>
+                        >>> squares[-3:]  # slicing returns a new list <br>
+                        [9, 16, 25]</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Control_Flow">
+            <header>Control Flow</header>
+            <article>
+<p>if Statements: <br> Perhaps the most well-known statement type is the if statement. For example:</p>
+<code><pre>>>> x = int(input("Please enter an integer: "))  <br>
+Please enter an integer: 42 <br>
+>>> if x < 0:<br>
+...     x = 0<br>
+...     print('Negative changed to zero')<br>
+... elif x == 0:<br>
+...     print('Zero')<br>
+... elif x == 1:<br>
+...     print('Single')<br>
+... else:<br>
+...     print('More')<br>
+...<br>
+More</pre></code>
+
+                <p>for Statements:<br>The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):</p>
+                <code>>>> # Measure some strings: <br>
+                    ... words = ['cat', 'window', 'defenestrate']<br>
+                    >>> for w in words:<br>
+                    ...     print(w, len(w))<br>
+                    ...<br>
+                    cat 3<br>
+                    window 6<br>
+                    defenestrate 12</code>
+                
+                <p>range() Function:<br>The given end point is never part of the generated sequence; range(10) generates 10 values, the legal indices for items of a sequence of length 10. It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the ‘step’):</p>
+                <code>>>> list(range(5, 10)) <br>
+                    [5, 6, 7, 8, 9] <br>
+                    
+                    >>> list(range(0, 10, 3))<br>
+                    [0, 3, 6, 9]<br>
+                    
+                    >>> list(range(-10, -100, -30))<br>
+                    [-10, -40, -70]</code>
+
+                <p>break and continue: <br>The break statement, like in C, breaks out of the innermost enclosing for or while loop.
+
+                    Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the iterable (with for) or when the condition becomes false (with while), but not when the loop is terminated by a break statement. This is exemplified by the following loop, which searches for prime numbers:</p>
+                <code><pre>>>> for n in range(2, 10):<br>
+...     for x in range(2, n):<br>
+...         if n % x == 0:<br>
+...             print(n, 'equals', x, '*', n//x)<br>
+...             break<br>
+...     else:<br>
+...         # loop fell through without finding a factor<br>
+...         print(n, 'is a prime number')<br>
+...
+2 is a prime number<br>
+3 is a prime number<br>
+4 equals 2 * 2<br>
+5 is a prime number<br>
+6 equals 2 * 3<br>
+7 is a prime number<br>
+8 equals 2 * 4
+9 equals 3 * 3
+                </pre>
+                    </code>
+            </article>     
+        </section>
+
+        <section class="main-section" id="Input_and_Output">
+            <header>Input and Output</header>
+            <article>
+                <p>The print() function prints the specified message to the screen, or other standard output device.
+
+                    The message can be a string, or any other object, the object will be converted into a string before written to the screen.
+                    
+                    </p>
+                <code>
+                    print(object(s), sep=separator, end=end, file=file, flush=flush)
+                </code>
+
+                <p>The first argument is a string containing the filename. The second argument is another string containing a few characters describing the way in which the file will be used. mode can be 'r' when the file will only be read, 'w' for only writing (an existing file with the same name will be erased), and 'a' opens the file for appending; any data written to the file is automatically added to the end. 'r+' opens the file for both reading and writing. The mode argument is optional; 'r' will be assumed if it’s omitted. <br>
+
+                    Normally, files are opened in text mode, that means, you read and write strings from and to the file, which are encoded in a specific encoding. If encoding is not specified, the default is platform dependent (see open()). 'b' appended to the mode opens the file in binary mode: now the data is read and written in the form of bytes objects. This mode should be used for all files that don’t contain text. <br>
+                    
+                    In text mode, the default when reading is to convert platform-specific line endings (\n on Unix, \r\n on Windows) to just \n. When writing in text mode, the default is to convert occurrences of \n back to platform-specific line endings. This behind-the-scenes modification to file data is fine for text files, but will corrupt binary data like that in JPEG or EXE files. Be very careful to use binary mode when reading and writing such files. <br>
+                    
+                    It is good practice to use the with keyword when dealing with file objects. The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point. Using with is also much shorter than writing equivalent try-finally blocks:</p>
+
+                    <code>
+                        <pre>
+>>> f = open('workfile', 'w')
+>>> with open('workfile') as f:
+...     read_data = f.read()
+>>> # We can check that the file has been automatically closed.
+>>> f.closed
+True
+                    </pre>
+                    </code>
+            </article>
+
+        </section>
+
+        <section class="main-section" id="Modules">
+            <header>Modules</header>
+            <article>
+                <ol>
+                    <li>If you quit from the Python interpreter and enter it again, the definitions you have made (functions and variables) are lost. Therefore, if you want to write a somewhat longer program, you are better off using a text editor to prepare the input for the interpreter and running it with that file as input instead. This is known as creating a script. As your program gets longer, you may want to split it into several files for easier maintenance. You may also want to use a handy function that you’ve written in several programs without copying its definition into each program.</li>
+                    <li>To support this, Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module; definitions from a module can be imported into other modules or into the main module (the collection of variables that you have access to in a script executed at the top level and in calculator mode).</li>
+                    <li>A module is a file containing Python definitions and statements. The file name is the module name with the suffix .py appended. Within a module, the module’s name (as a string) is available as the value of the global variable __name__. For instance, use your favorite text editor to create a file called fibo.py in the current directory with the following contents:</li>
+                </ol>
+                <code>
+                    <pre>
+# Fibonacci numbers module
+
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+
+def fib2(n):   # return Fibonacci series up to n
+    result = []
+    a, b = 0, 1
+    while a < n:
+        result.append(a)
+        a, b = b, a+b
+    return result
+                    </pre>
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Packages">
+            <header>Packages</header>
+            <article>    
+                <p>Packages are a way of structuring Python’s module namespace by using “dotted module names”. For example, the module name A.B designates a submodule named B in a package named A. Just like the use of modules saves the authors of different modules from having to worry about each other’s global variable names, the use of dotted module names saves the authors of multi-module packages like NumPy or Pillow from having to worry about each other’s module names.</p>
+                <p>Suppose you want to design a collection of modules (a “package”) for the uniform handling of sound files and sound data. There are many different sound file formats (usually recognized by their extension, for example: .wav, .aiff, .au), so you may need to create and maintain a growing collection of modules for the conversion between the various file formats. There are also many different operations you might want to perform on sound data (such as mixing, adding echo, applying an equalizer function, creating an artificial stereo effect), so in addition you will be writing a never-ending stream of modules to perform these operations. Here’s a possible structure for your package (expressed in terms of a hierarchical filesystem):</p>
+                <code>
+                    <pre>
+sound/                          Top-level package
+      __init__.py               Initialize the sound package
+      formats/                  Subpackage for file format conversions
+              __init__.py
+              wavread.py
+              wavwrite.py
+              aiffread.py
+              aiffwrite.py
+              auread.py
+              auwrite.py
+              ...
+      effects/                  Subpackage for sound effects
+              __init__.py
+              echo.py
+              surround.py
+              reverse.py
+              ...
+      filters/                  Subpackage for filters
+              __init__.py
+              equalizer.py
+              vocoder.py
+              karaoke.py
+              ...
+
+import sound.effects.echo
+sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
+from sound.effects import echo
+echo.echofilter(input, output, delay=0.7, atten=4)
+from sound.effects.echo import echofilter
+echofilter(input, output, delay=0.7, atten=4)
+                    </pre>
+                </code>
+            </article>
+
+        </section>
+
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <p>Reference was taken from <a href="https://docs.python.org/3/tutorial/index.html">Python Tutorial</a></p>
+            </article>
+        </section>
+
+
+
+    </main>
+    
+</body>
+</html>
